@@ -9,7 +9,7 @@ class Newuser extends Model {
 }
 
 // create class for page 2 of wireframe, This creates the  tablew for the databass.
-//Use bcrypt node to encrypt the password when typed in.
+//Use bcrypt node to encrypt the password when typed in and to be used in the login route.
 
 Newuser.init(
     {
