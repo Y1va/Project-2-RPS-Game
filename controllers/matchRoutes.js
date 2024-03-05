@@ -35,5 +35,15 @@ function calculateResult(userChoice, computerChoice) {
   }
 }
 
-
 // Route to get all matches
+router.get('/', async (req, res) => {
+  try {
+    const matches = await Match.findAll();
+    res.json(matches);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+module.exports = router;
