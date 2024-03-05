@@ -35,5 +35,16 @@ router.post('/login', async(req, res) => {
     }
 });
 
+// This is to logout the indiividual when he presses logout, which causes his sesison to end.
+router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  });
+
 
 module.exports = router;
