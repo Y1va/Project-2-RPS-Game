@@ -5,8 +5,6 @@ const playerDisplay = document.getElementById('playerDisplay');
 const computerDisplay = document.getElementById('computerDisplay');
 const resultDisplay = document.getElementById('resultDisplay');
 
-const winCounter;
-const roundCounter;
 
 // Function for playing the game
 function playGame(playerChoice) {
@@ -40,3 +38,10 @@ function playGame(playerChoice) {
 
 
 // Need to store who has won in the database for the leaderboard
+
+// Need model for rps matches - Will store the result and will have associations such as user has many match and match belongs to user
+// Match routes file inside of controllers folder - This will contain a route to play a match, for e.g post route to /play. A route to get all matches, this route is a get route. When do / can get find all
+// In front end - do a fetch request to /play, get a response back, response will have computer choice and result
+// In /play, post route is the logic to generate computers choice, to calculate game result and record the match result in the database
+
+// Front end is for interactivity such as hitting the play route and sending that fetch request. Once that play route is hit any logic inside the route will trigger such as comparing the computer choice and comparing it against the user choice
