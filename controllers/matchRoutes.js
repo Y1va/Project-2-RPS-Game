@@ -5,7 +5,7 @@ const Match = require('../models/match'); // Create Match model
 // Route to play match
 router.post('/play', async (req, res) => {
   try {
-    const { user, choice } = req.body;
+    const { choice } = req.body;
 
     const computerChoice = Math.floor(Math.random() * 3); // 0 = rock 1 = paper 2 = scissors
     // Calculate the game result

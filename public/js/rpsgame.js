@@ -1,40 +1,66 @@
-// Target DOM elements
-// still need to create these id's in html
-const choices = ['rock', 'paper', 'scissors'];
-const playerDisplay = document.getElementById('playerDisplay');
-const computerDisplay = document.getElementById('computerDisplay');
-const resultDisplay = document.getElementById('resultDisplay');
+// Getting the buttons and result div from the DOM
+const rockButton = document.getElementById('rockBtn');
+const paperButton = document.getElementById('paperBtn');
+const scissorsButton = document.getElementById('scissorsBtn');
+const resultDiv = document.getElementById('result');
 
+// Click event listeners for the rock, paper and scissors buttons
+rockButton.addEventListener('click', async function () {
+  await playGame(0);
+});
 
-// Function for playing the game
-function playGame(playerChoice) {
-  const computerChoice = choices[Math.floor(Math.random() * 3)];
-  console.log(computerChoice);
-  let result = '';
+paperButton.addEventListener('click', async function () {
+  await playGame(1);
+});
 
-  // Validates if player choice is equal to computer choice
-  if (playerChoice === computerChoice) {
-    result = "It's a Tie!";
+scissorsButton.addEventListener('click', async function () {
+  await playGame(2);
+});
+
+// API/fetch call to matchRoutes & function to play the game
+async function playGame(choice) {
+  const response = await fetch('/matches/play', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ choice })
+  });
+  // Parse the response as JSON
+  const data = await response.json();
+  const { result, computerChoice } = data;
+
+  let resultText;
+  if (result === 'win') {
+    resultText = 'You Win!';
+  } else if (result === 'tie') {
+    resultText = 'It is a tie.';
   } else {
-    // Switch case for each possibility
-    switch (playerChoice) {
-      case 'rock':
-        result = computerChoice === 'scissors' ? 'You Win!' : 'You Lose';
-        break;
-      case 'paper':
-        result = computerChoice === 'rock' ? 'You Win!' : 'You Lose';
-        break;
-      case 'scissors':
-        result = computerChoice === 'paper' ? 'You Win!' : 'You Lose';
-        break;
-    }
+    resultText = 'You lost :(';
   }
 
-  // Displaying what the player and computer chose
-  playerDisplay.textContent = `PLAYER: ${playerChoice}`;
-  computerDisplay.textContent = `COMPUTER: ${computerChoice}`;
-  resultDisplay.textContent = result;
+  // Updating the text content of the result div
+  resultDiv.textContent = `${resultText}. CPU chose ${choiceName(
+    computerChoice
+  )}`;
 }
+
+// Function to get the name of the users choice
+function choiceName(choice) {
+  switch (choice) {
+    case 0:
+      return 'rock';
+    case 1:
+      return 'paper';
+    case 2:
+      return 'scissors';
+    default:
+      return '';
+  }
+}
+
+
+
 
 
 // Need to store who has won in the database for the leaderboard
