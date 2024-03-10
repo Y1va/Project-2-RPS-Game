@@ -35,7 +35,7 @@ function calculateResult(userChoice, computerChoice) {
   }
 }
 
-// Route to get all matches - Can setup with the leaderboard, api call to this
+// Route to get all matches
 router.get('/', async (req, res) => {
   try {
     const matches = await Match.findAll();
