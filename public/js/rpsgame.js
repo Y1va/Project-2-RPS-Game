@@ -1,3 +1,4 @@
+// Target DOM elements
 const choices = ['rock', 'paper', 'scissors'];
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
@@ -30,13 +31,13 @@ function playGame(playerChoice) {
   console.log('Result from determineWinner:', result); // Add this line for debugging
   setTimeout(() => {
     updateScore(result);
-  }, 3000); 
+  }, 3000); // Adjust the delay time as needed
 }
 
 function determineWinner(playerChoice, computerChoice) {
   console.log('Player Choice:', playerChoice);
   console.log('Computer Choice:', computerChoice);
-  playerChoice = playerChoice.toLowerCase(); 
+  playerChoice = playerChoice.toLowerCase(); // Convert player's choice to lowercase
   computerChoice = computerChoice.toLowerCase();
 
   let result;
@@ -57,30 +58,33 @@ function determineWinner(playerChoice, computerChoice) {
     result = 'cpu';
   }
 
+  // Return the result
   return result;
 }
 
 // Function to update scores and display result
 function updateScore(result) {
-  console.log('Result in updateScore:', result); 
+  console.log('Result in updateScore:', result); // Add this line for debugging
   if (result === 'player') {
     playerScore++;
     playerWinsRound();
-    recordMatch(userId, 'win');
   } else if (result === 'cpu') {
     computerScore++;
     cpuWinsRound();
-    recordMatch(userId, 'loss')
   }
-  checkWinner(); 
+  checkWinner(); // Check if the game has been won after each round
+}
 
 function changePlayerImageWithShake(newImageSrc, defaultImageSrc, callback) {
+  // Set the new image source immediately
   playerImg.src = newImageSrc;
 
+  // Execute the callback function if provided
   if (typeof callback === 'function') {
     callback();
   }
 
+  // If a default image source is provided, reset to it after a delay
   if (defaultImageSrc) {
     setTimeout(() => {
       playerImg.src = defaultImageSrc;
@@ -95,8 +99,9 @@ function handlePlayerChoice(playerChoice) {
     const cpuImagePath = `/images/${computerChoice}CPU.png`;
 
     changePlayerImageWithShake(playerImagePath, '/images/rockPlayer.png', () => {
-      playGame(playerChoice); 
+      playGame(playerChoice); // Pass playerChoice to playGame function
     });
+     // Animate the player's choice
      animateChoices(playerChoice, 'player', playerChoice); 
   }
 }
@@ -105,38 +110,52 @@ function handlePlayerChoice(playerChoice) {
 function animateChoices(choice, player, playerChoice) {
   const img = player === 'player' ? playerImg : cpuImg;
 
+  // Set the initial default image sources
   img.src = player === 'player' ? '/images/rockPlayer.png' : '/images/rockCPU.png';
 
+  // Shake the images
   img.classList.add('shake');
 
   setTimeout(() => {
+    // Remove the shake animation
     img.classList.remove('shake');
+    
+    // Update the image source to the chosen image after the animation
     img.src = player === 'player' ? `/images/${choice}Player.png` : `/images/${choice}CPU.png`;
 
+    // Display the CPU's choice
     if (player === 'cpu' && cpuChoiceDisplay) {
+  
+      // Determine the winner and update the score
       const result = determineWinner(player, choice);
       updateScore(result);
     }
 
+    // Reset the images after a delay
     setTimeout(() => {
       resetImages();
-    }, 3000); 
-  }, 2500); 
+    }, 3000); // Longer delay before resetting to default image
+  }, 2500); // Delay added to simulate the choice animation
 }
 
 function resetImages() {
-  playerImg.src = '/images/rockPlayer.png'; 
-  cpuImg.src = '/images/rockCPU.png';
+  playerImg.src = '/images/rockPlayer.png'; // Player's default image
+  cpuImg.src = '/images/rockCPU.png'; // CPU's default image
 
+  // Reset the CPU choice display to blank
   if (cpuChoiceDisplay) cpuChoiceDisplay.textContent = '';
+
+  // Show the spinner
   if (spinner) spinner.style.display = 'inline-block';
 }
 
+// Event listeners for player choices
 rockBtn.addEventListener('click', () => handlePlayerChoice('rock'));
 paperBtn.addEventListener('click', () => handlePlayerChoice('paper'));
 scissorsBtn.addEventListener('click', () => handlePlayerChoice('scissors'));
 
 function updateScoreDisplay() {
+    // Loop over player score circles
     const playerCircles = playerScoreCircles.children;
     for (let i = 0; i < playerCircles.length; i++) {
       const circle = playerCircles[i];
@@ -147,6 +166,7 @@ function updateScoreDisplay() {
       }
     }
   
+    // Loop over CPU score circles
     const cpuCircles = cpuScoreCircles.children;
     for (let i = 0; i < cpuCircles.length; i++) {
       const circle = cpuCircles[i];
@@ -190,4 +210,3 @@ function updateScoreDisplay() {
   
   // Initialize score display
   updateScoreDisplay();
-}
