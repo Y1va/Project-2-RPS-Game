@@ -1,0 +1,26 @@
+{{#if logged_in}}
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="postBox col d-flex flex-column align-items-center">
+                <div class="postTitle">
+                    <h2 class="display-6 mb-4">NEW POST</h2>
+                </div>
+                <form id="add-post-form">
+                <div class="form-group">
+                    <label for="post-title" class="mb-1 fs-5">TITLE:</label>
+                    <input class="form-control mb-4" type="text" id="post-title" name="post-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="post-content" class="mb-1 fs-5">CONTENT:</label>
+                    <textarea class="form-control mb-4" id="post-content" name="post-content" rows="5" required></textarea>
+                </div>
+                <div class="form-group text-center">
+                    <button class="btn btn-dark fw-bold" type="submit">CREATE POST</button>
+                </div>
+                </form>
+            </div>   
+        </div> 
+    </div>
+{{/if}}
+<script src="/js/logout.js"></script>
+<script src="/js/addpost.js"></script>

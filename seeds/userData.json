@@ -1,0 +1,16 @@
+[
+    {
+      "name": "Alice",
+      "birthday": "1990-05-15",
+      "gender": "F",
+      "email": "alice@example.com",
+      "password": "password123"
+    },
+    {
+      "name": "Bob",
+      "birthday": "1985-09-20",
+      "gender": "M",
+      "email": "bob@example.com",
+      "password": "securepassword"
+    }
+  ]

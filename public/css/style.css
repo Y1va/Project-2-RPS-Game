@@ -1,0 +1,423 @@
+* {
+    box-sizing: border-box;
+}
+ 
+body {
+    background-color: rgb(77, 28, 129);
+}
+
+.mainTitle h1 {
+    font-family: 'Nabla', sans-serif;
+    font-size: 120px;
+}
+
+.home h1 {
+    font-family: 'Nabla', sans-serif;
+    font-size: 100px;
+}
+
+.gameTitle h1 {
+    font-family: 'Madimi One', sans-serif;
+    font-size: 60px;
+    color: rgb(247, 231, 231);
+    text-shadow: 4px 4px black;
+}
+
+.less {
+    color: rgb(146, 37, 37);
+}
+
+.forumTitle h1 {
+    font-family: 'Madimi One', sans-serif;
+    margin-top: 30px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 15px;
+    box-shadow: 3px 4px rgb(61, 60, 60);
+    background-color: rgb(38, 37, 40);
+    color: white;
+}
+
+.score {
+    font-size: 30px;
+    color: rgb(84, 11, 11);
+}
+
+.mainGame h2 {
+    font-family: 'Bungee Spice', sans-serif;
+    font-size: 60px;
+    text-shadow: 4px 4px black;
+}
+
+
+
+.lead {
+    font-size: 19px;
+    color: rgb(159, 156, 156);
+    text-shadow: 1px 2px black;
+}
+
+.mainGame .lead {
+    font-size: 16px;
+}
+
+h2,
+h3 {
+    font-family: 'Madimi One', sans-serif;
+}
+
+h3 {
+    color: white;
+}
+
+.btn {
+    font-family: 'Madimi One', sans-serif;
+    font-size: 24px;
+}
+
+.buttons1 {
+    padding-top: 60px;
+}
+
+#loginBtn {
+    width: 120px;
+}
+
+.loginBox,
+.signUpBox {
+    background-color: rgb(206, 185, 222);
+    border: 5px solid black;
+    box-shadow: 3px 4px rgb(61, 60, 60);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.loginTitle h2,
+.signUpTitle h2,
+.postTitle h2 {
+    border: 2px solid rgb(245, 243, 243);
+    padding-left: 7px;
+    padding-right: 7px;
+    background-color: rgb(38, 37, 40);
+    box-shadow: 3px 4px rgb(61, 60, 60);
+    border-radius: 15px;
+    color: white;
+}
+
+.postBox {
+    margin-top: 15%;
+    background-color: rgb(206, 185, 222);
+    border: 5px solid black;
+    box-shadow: 3px 4px rgb(61, 60, 60);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.postBox .form-control {
+    width: 600px;
+}
+
+.forgotPassTitle h2 {
+    font-size: 32px
+}
+
+i {
+    font-size: 20px;
+}
+
+label {
+    font-family: 'Madimi One', sans-serif;
+    font-size: 23px;
+}
+
+.form-control {
+    font-family: 'Madimi One', sans-serif;
+    font-size: 18px;
+}
+
+.lockIcon {
+    font-size: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: rgb(38, 40, 37);
+    color: white;
+}
+
+nav {
+    font-family: 'Madimi One', sans-serif;
+    padding: 10px;
+    background-color: rgb(45, 17, 76);
+    
+}
+
+.nav-pills .nav-link.active {
+    background-color: rgb(224, 207, 241);
+    color: black;
+}
+
+.nav-item {
+    padding: 2px;
+}
+
+.nav-link,
+.nav-link.disabled {
+    color: white;
+}
+
+.nav-link:hover{
+    background-color: rgb(224, 207, 241);
+    color: black;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
+.alert{
+     margin-bottom: 20px;
+     margin-left: 20%;
+     margin-right: 20%;
+}
+
+.home h1 {
+    margin-top: -60px;
+}
+
+#playBtn {
+    margin-top: 30px;
+}
+
+.form-input {
+    width: 300px;
+}
+
+#birthday {
+    text-transform: uppercase;
+}
+
+.profile {
+    padding: 40px;
+    font-family: 'Madimi One', sans-serif;
+}
+
+.supportBox {
+    font-family: 'Madimi One', sans-serif
+}
+
+.supportBox p {
+    font-size: 20px;
+    text-align: justify;
+    
+}
+
+.profile p {
+    font-size: 20px;
+}
+
+.profile h5,
+.supportBox h5 {
+    color: rgb(85, 85, 182);
+}
+
+.profilePic {
+    font-size: 60px;
+    border: 3px solid black;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.range {
+    width: 90%
+}
+
+.settings,
+.profileDetails,
+.gamePlayData,
+.support,
+.helpline,
+.resources,
+.post-container {
+    padding: 30px;
+    box-shadow: 3px 4px rgb(98, 97, 97);
+    border-radius: 5px;
+    background-color: rgb(242, 230, 214);
+}
+
+.settings .card-title,
+.profileDetails .card-title,
+.gamePlayData .card-title,
+.support .card-title,
+.helpline .card-title,
+.resources .card-title,
+.posts .card-title    {
+    border-bottom: 4px dashed rgb(174, 76, 46);;
+    padding-bottom: 12px;
+}
+
+.settings span,
+.profileDetails span,
+.gamePlayData span {
+    font-size: 29px;
+    align-items: center;
+    border: 2px solid rgb(197, 85, 51);
+    border-radius: 50%;
+    background-color: black;
+    padding: 3.5px;
+    color: white;
+    box-shadow: 2px 2px rgb(42, 42, 42);
+    margin-right: 10px;
+}
+
+
+.choices img {
+    width: 50%;
+    border: 3px solid rgb(248, 225, 195);
+    border-radius: 50%;
+    box-shadow: 3px 5px rgb(98, 96, 96);
+}
+
+.choice-btn {
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.choice-btn:hover {
+    transform: scale(1.1);
+}
+
+.choice-btn:active {
+    transform: scale(0.9);
+}
+
+.choices {
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(143, 122, 159);
+    box-shadow: 3px 4px rgb(61, 60, 60);
+}
+
+.cpuChoice h3 {
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 35px;
+    background-color: rgb(143, 122, 159);
+    box-shadow: 3px 4px rgb(61, 60, 60);
+    color: black;
+    font-weight: bolder;
+    text-shadow: 2px 2px grey;
+    
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateY(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateY(-20px); }
+    20%, 40%, 60%, 80% { transform: translateY(20px); }
+}
+
+.shake {
+    animation: shake 2.5s ease-in-out 3 forwards; /* Adjust the duration and iteration count */
+}
+
+.mainGame .title {
+    padding-top: 2%;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 2px; /* Adjust margin for spacing */
+    display: inline-block;
+}
+
+.circle.active {
+    background-color: #ffcc00; /* Change to the color you want for the active circle */
+}
+
+.addPost a{
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.addPost span {
+    font-size: 23px;
+}
+
+.forum {
+    font-family: 'Madimi One', sans-serif;
+} 
+
+#displayResult {
+    font-family: 'Madimi One', sans-serif;
+    font-size: 24px;
+    color: white;
+}
+
+.forumBox {
+    margin-top: 20px;
+}
+.forumPosts .card {
+    border: 3px solid black;
+    border-radius: 15px;
+    background-color: rgb(190, 217, 241);
+    box-shadow: 2px 3px rgb(87, 86, 86);
+}
+
+.forumPosts .card-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.forum h4 {
+   color: white;
+}
+
+.forumPosts h4 {
+    text-shadow: 2px 3px rgb(58, 58, 58);
+}
+
+.posts {
+    font-family: 'Madimi One', sans-serif;
+    margin-top: 70px;
+    margin-left: 17%;
+    margin-right: 17%;
+}
+
+.posts p {
+    text-align: justify;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto; /* Centered the table horizontally */
+    font-family: 'Madimi One', sans-serif;
+    color: white;
+}
+th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 20px; 
+}
+
+th {
+    background-color: black;
+}
+
+.leaderboard {
+    font-family: 'Madimi One', sans-serif;
+    color: white;
+    margin-top: 7%;
+}
