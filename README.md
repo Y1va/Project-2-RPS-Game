@@ -88,7 +88,7 @@ THEN I am given links and resources on where to seek gambling addiction support
 
 ## Usage
 
-Landing page of Wagerless:
+Landing Page of Wagerless:
 
 ![alt text](./public/images/Homepage%20wagerless.png)
 
@@ -107,7 +107,6 @@ Support:
 Profile:
 
 ![alt text](./public/images/profile.png)
-
 
 
 ## Contributing
