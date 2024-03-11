@@ -88,7 +88,25 @@ THEN I am given links and resources on where to seek gambling addiction support
 
 ## Usage
 
-<!-- Will do when the application is finished. Need to take screenshots -->
+Landing page of Wagerless:
+
+![alt text](./public/images/Homepage%20wagerless.png)
+
+Community Forum:
+
+![alt text](./public/images/community%20forum.png)
+
+Leaderboard:
+
+![alt text](./public/images/leaderboard.png)
+
+Support:
+
+![alt text](./public/images/support.png)
+
+Profile:
+
+![alt text](./public/images/profile.png)
 
 
 
