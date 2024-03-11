@@ -1,0 +1,31 @@
+<main class="posts d-flex justify-content-center align-items-center"> 
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="post-container card-body">
+                    <h2 id="title" class="card-title fs-2 fw-bold text-center">{{title}}</h2>
+                    <p id="content" class="fs-5 mt-4">{{content}}</p>
+                    <p class="fs-6 text-end mt-4">Posted by: {{user.name}} - {{user.email}}</p>
+                    <p class="fs-6 text-end">Date Posted: {{format_date createdAt}}</p>
+                    <div class="d-flex justify-content-end mt-4">
+                        <button id="replyBtn" class="btn btn-primary me-2">REPLY</button>
+                        <button id="editBtn" class="btn btn-secondary me-2" data-id="{{id}}">EDIT</button>
+                        <button id="deleteBtn" class="btn btn-danger" data-id="{{id}}">DELETE</button>
+                    </div>
+                    <!-- Reply Form -->
+                    <form id="replyForm" class="mt-4" style="display: none;">
+                        <div class="mb-3">
+                            <label for="replyContent" class="form-label">Reply:</label>
+                            <textarea class="form-control" id="replyContent" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="/js/editpost.js"></script>
+<script src="/js/deletepost.js"></script>
+<script src="/js/replypost.js"></script>

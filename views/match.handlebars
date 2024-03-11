@@ -1,0 +1,77 @@
+<div class="mainGame container text-center">
+    <div class="row">
+        <div class="gameTitle col">
+            <h1 class="title">WAGER<span class="less">LESS</span></h1> 
+            <h2 class="vs">VS</h2>
+            <p id="displayResult"></p>
+        </div>
+    </div>
+   
+    <div class="row">
+        <!-- Player Screen -->
+        <div class="player col-md-6">
+            <div class="score col mb-2">
+                <div class="row">
+                    <div class="circle-container" id="playerScoreCircles">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="fs-3 mb-4">PLAYER</h3> <!--  Player name -->
+            <img src="/images/rockPlayer.png" alt="defaultRock" class="mb-4" id="defaultPlayer">
+            <div class="choices mt-4">
+                <div class="row">
+                    <div class="col">
+                        <button class="choice-btn" id="rockBtn">
+                            <img src="/images/rock1.png" alt="Rock" class="img-fluid">
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="choice-btn" id="paperBtn">
+                            <img src="/images/paper1.png" alt="Paper" class="img-fluid">
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="choice-btn" id="scissorsBtn">
+                            <img src="/images/scissors1.png" alt="Scissors" class="img-fluid">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- CPU Screen -->
+        <div class="cpu col-md-6">
+            <div class="score col mb-2">
+                <div class="row">
+                    <div class="circle-container" id="cpuScoreCircles">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="mb-4">CPU</h3>
+            <img src="/images/rockCPU.png" alt="defaultRock" class="mb-4" id="defaultCPU">
+            <div class="cpuChoice">
+                <!-- Display CPU choice and result here -->
+                <div class="row mt-4">
+                    <div class="cpuChoice col">
+                        <h3 class="display-6">CPU CHOICE: <span id="spinner" class="spinner-border spinner-border-lg ms-2" role="status" aria-hidden="true"></span><span id="cpuChoiceDisplay"></span></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/rpsgame.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/matchdata.js"></script>
