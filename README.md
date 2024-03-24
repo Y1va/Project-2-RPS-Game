@@ -108,6 +108,10 @@ Profile:
 
 ![alt text](./public/images/profile.png)
 
+## Live Demo on Heroku
+
+Check out our live demo on Heroku [here](https://wagerless-app-96d9cde47554.herokuapp.com/).
+
 
 ## Contributing
 
