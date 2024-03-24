@@ -1,31 +1,38 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth'); // Importing authentication middleware
 
+// Route to get all user data (excluding password)
 router.get("/", async (req, res) => {
   try {
    const userDataDb = await User.findAll({
        attributes: { exclude: ['password']},
    });
-   res.json(userDataDb);
+   res.json(userDataDb); // Sending user data as JSON response
   } catch (err) {
-       res.status(500).json(err);
+       res.status(500).json(err); // Handling errors
   }
 });
   
+// Route to handle user login
 router.post('/login', async (req, res) => {
   try {
+      // Finding user data by email
       const userData = await User.findOne({ where: { email: req.body.email } });
 
       if (!userData) {
+          // Handling incorrect email or password
           return res.status(400).json({ message: 'Incorrect email or password. Please try again.' });
       }
 
+      // Checking if password is valid
       const validPassword = await userData.checkPassword(req.body.password);
       if (!validPassword) {
+          // Handling incorrect email or password
           return res.status(400).json({ message: 'Incorrect email or password. Please try again.' });
       }
 
+      // Creating session for logged-in user
       req.session.userId = userData.id;
       req.session.logged_in = true;
 
@@ -43,10 +50,13 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// Route to handle user signup
 router.post('/signup', async (req, res) => {
   try {
+      // Creating a new user
       const newUser = await User.create(req.body);
 
+      // Creating session for newly signed-up user
       req.session.userId = newUser.id;
       req.session.logged_in = true;
 
@@ -64,13 +74,15 @@ router.post('/signup', async (req, res) => {
   }
 });
 
+// Route to handle user logout
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
+    // Destroying session for logged-out user
     req.session.destroy(() => {
-      res.status(204).end();
+      res.status(204).end(); // Sending no content status
     });
   } else {
-    res.status(404).end();
+    res.status(404).end(); // Handling if user is not logged in
   }
 });
 
